@@ -1,0 +1,31 @@
+.paginationContainer {
+  @apply flex justify-center items-center bg-white;
+  transition: all ease-in-out 500ms;
+}
+
+.paginationContainer button {
+  @apply p-4 text-center border-0 bg-transparent;
+  color: var(--primary-color);
+}
+
+.paginationContainer button:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.paginationContainer button:disabled {
+  @apply bg-transparent;
+  cursor: auto;
+}
+
+.paginationContainer button:disabled:hover {
+  @apply bg-transparent;
+  color: var(--primary-color);
+  transform: scale(1);
+}
+
+.paginationContainer button.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}

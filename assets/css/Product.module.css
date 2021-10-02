@@ -1,0 +1,45 @@
+.productCard {
+  @apply my-2 p-4 cursor-pointer text-white text-center;
+  background-color: var(--primary-color);
+  border-radius: 1.5rem;
+  transition: all ease-in-out 500ms;
+}
+
+.productCard:hover {
+  @apply bg-black;
+  transform: scale(1.05);
+  box-shadow: 0 2px 1px 2px rgba(204, 204, 204, 0.438);
+}
+
+.productCard img {
+  border-radius: 1.5rem;
+}
+
+.productCard h3 {
+  @apply my-2;
+}
+
+.productCard .ratingNColor {
+  @apply flex justify-between items-center my-1;
+}
+
+.productCard .ratingNColor span.prodColor {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
+.productCard p {
+  @apply my-1 text-base font-normal;
+}
+
+.paginationDim {
+  @apply border rounded-sm py-2 px-4 outline-none;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.paginationDim:focus {
+  outline: none;
+}

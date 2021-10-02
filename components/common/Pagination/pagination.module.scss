@@ -1,0 +1,34 @@
+@mixin activeBtn {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.paginationContainer {
+  @apply flex justify-center items-center bg-white;
+  transition: all ease-in-out 500ms;
+
+  button {
+    @apply p-4 text-center border-0 bg-transparent;
+    color: var(--primary-color);
+
+    &:hover {
+      @include activeBtn();
+      transform: scale(1.02)
+    }
+
+    &:disabled {
+      @apply bg-transparent;
+      cursor: auto;
+
+      &:hover {
+        @apply bg-transparent;
+        color: var(--primary-color);
+        transform: scale(1)
+      }
+    }
+
+    &.active {
+      @include activeBtn();
+    }
+  }
+}
