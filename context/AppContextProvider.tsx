@@ -1,4 +1,5 @@
 import { createContext, ReactNode, ReactNodeArray, useReducer } from 'react';
+import useWindowSize from '../Hooks/useWindowSize';
 import { CategoryType } from '../types/Category';
 import { AppReducer } from './AppReducer';
 import { ACTION_TYPES, StateType } from './ContextTypes';
@@ -15,7 +16,7 @@ export const AppContextProvider = ({
 	children: ReactNode | ReactNodeArray;
 }) => {
 	const [state, dispatch] = useReducer(AppReducer, initialState);
-
+	const deviceSize = useWindowSize();
 	const setCurrentCategory = (currentCat: CategoryType) => {
 		dispatch({
 			type: ACTION_TYPES.UPDATE_CURRENT_CATEGORY,
@@ -32,6 +33,7 @@ export const AppContextProvider = ({
 		...state,
 		setCurrentCategory,
 		updateFilters,
+		isMobile: deviceSize?.width! < 768,
 	};
 	return (
 		<AppContext.Provider value={contextValues}>{children}</AppContext.Provider>

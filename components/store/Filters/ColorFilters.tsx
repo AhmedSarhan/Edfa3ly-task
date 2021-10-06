@@ -39,11 +39,8 @@ const ColorFilters = () => {
 	const [colorsState, setColorsState] = useState<Color[]>(() => colors);
 	const [filterColors, setFiltersColors] = useState<string[]>([]);
 	useEffect(() => {
-		console.log('before', firstRender.current);
-
 		if (firstRender.current) return;
 		if (!filters?.colors || filters?.colors?.length! === 0) {
-			console.log('clearing colors now');
 			setColorsState(colors);
 			setFiltersColors([]);
 		}

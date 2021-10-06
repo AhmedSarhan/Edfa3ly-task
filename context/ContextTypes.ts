@@ -4,7 +4,8 @@ import { FiltersType } from '../types/Filters';
 export interface StateType {
 	currentCategory?: CategoryType;
 	filters: FiltersType;
-	setCurrentCategory: (cat: CategoryType) => void;
+	isMobile?: boolean;
+	setCurrentCategory: (cat: CategoryType | {}) => void;
 	updateFilters: (filters: FiltersType) => void;
 }
 

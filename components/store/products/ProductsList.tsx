@@ -49,8 +49,8 @@ const ProductsList = ({
 						<ProductCard product={product} key={product?.id} />
 					))}
 			</div>
-			<div className="flex justify-between items-center mt-5 mb-2">
-				<div>
+			<div className="flex flex-col-reverse md:flex-row flex-wrap justify-center md:justify-between items-center mt-5 mb-2">
+				<div className="my-4 md:my-0">
 					<select
 						className={styles.paginationDim}
 						onChange={(e) => changePaginationDims(parseInt(e?.target?.value))}

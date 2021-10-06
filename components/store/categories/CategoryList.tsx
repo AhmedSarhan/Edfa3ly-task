@@ -5,7 +5,9 @@ import styles from './categories.module.scss';
 
 const CategoryList = ({ categories }: { categories: CategoryType[] }) => {
 	return (
-		<section className={`flex justify-between items-center flex-wrap`}>
+		<section
+			className={`hidden md:flex justify-between items-center flex-wrap`}
+		>
 			{categories?.length > 0 &&
 				categories.map((cat: CategoryType) => (
 					<CategoryCard key={cat?.id} category={cat} />

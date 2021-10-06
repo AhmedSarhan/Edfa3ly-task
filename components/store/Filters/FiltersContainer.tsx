@@ -9,14 +9,19 @@ import { AppContext } from './../../../context/AppContextProvider';
 
 interface filtersProps {
 	categories: CategoryType[];
+	closeFilters: () => void;
 }
-const FiltersContainer = ({ categories }: filtersProps) => {
-	const { updateFilters } = useContext(AppContext);
+const FiltersContainer = ({ categories, closeFilters }: filtersProps) => {
+	const { updateFilters, setCurrentCategory } = useContext(AppContext);
 	const clearAllFiltersHandler = () => {
 		updateFilters({});
+		setCurrentCategory({});
 	};
 	return (
 		<div className={styles.filtersContainer}>
+			<button onClick={() => closeFilters()} className={styles.closeBtn}>
+				&times;
+			</button>
 			<CategoryFilters categories={categories} />
 			<PriceRangeFilters />
 			<ColorFilters />
