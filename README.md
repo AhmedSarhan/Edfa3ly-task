@@ -5,7 +5,7 @@
 
 **Edfa3ly Store**
 
-an e-commerce where you can buy different products from different store abroad without any customs and shipping hassles
+E-commerce web app where you can buy different products from different store abroad without any customs and shipping hassles
 
 
 ## Installation and Setup Instructions
